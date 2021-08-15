@@ -6,6 +6,7 @@ let rightImg = document.getElementById('rightImg');
 let centerImg = document.getElementById('centerImg');
 
 let result = document.getElementById('results');
+
 let busImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg',
     'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg',
     'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg'];
@@ -27,7 +28,6 @@ for (let i = 0; i < busImages.length; i++) {
     new BusMall(busImages[i]);
 }
 
-console.log(bus);
 function randomImage() {
     return Math.floor(Math.random() * bus.length);
 
@@ -78,20 +78,19 @@ function clickHandler(event) {
             bus[centerindex].votes++
         }
         renderImg();
-        console.log(bus);
+        //console.log(bus);
         attempt++;
     } else {
 
 
-        let button = document.getElementById('display-button');
-        button.addEventListener("click", display);
+        let button = document.getElementById('display-button').onclick = function() {display()};;
 
         function display() {
 
             for (let i = 0; i < bus.length; i++) {
                 let liEl = document.createElement('li');
                 result.appendChild(liEl);
-                liEl.textContent = `${bus[i].gName} has ${bus[i].votes} votes and  ${bus[i].views} views.`;
+                 liEl.textContent = `${bus[i].gName} has ${bus[i].votes} votes and  ${bus[i].views} views.`;
             }
             leftImg.removeEventListener('click', clickHandler);
             rightImg.removeEventListener('click', clickHandler);
