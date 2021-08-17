@@ -109,10 +109,11 @@ function clickHandler(event) {
                 views.push(bus[i].views);
                 arrimge.push(bus[i].gName);
             }
-            
             leftImg.removeEventListener('click', clickHandler);
             rightImg.removeEventListener('click', clickHandler);
             centerImg.removeEventListener('click', clickHandler);
+            chartRender();
+            document.getElementById('display-button').style.display = 'none';
 
         }
     }
@@ -156,4 +157,3 @@ function chartRender() {
         }
     });
 }
-chartRender();
