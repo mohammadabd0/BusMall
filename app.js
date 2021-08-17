@@ -123,6 +123,7 @@ function clickHandler(event) {
             leftImg.removeEventListener('click', clickHandler);
             rightImg.removeEventListener('click', clickHandler);
             centerImg.removeEventListener('click', clickHandler);
+            document.getElementById('display-button').style.display = 'none';
 
         
     }
