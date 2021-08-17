@@ -96,8 +96,11 @@ function clickHandler(event) {
     } else {
 
 
-        let button = document.getElementById('display-button').onclick = function() {display()};
-
+        let button = document.getElementById('display-button').onclick = function() {
+            
+            display()
+        };
+        
         let arrimge=[];
         function display() {
 
@@ -105,16 +108,24 @@ function clickHandler(event) {
                 let liEl = document.createElement('li');
                 result.appendChild(liEl);
                  liEl.textContent = `${bus[i].gName} has ${bus[i].votes} votes and  ${bus[i].views} views.`;
+                 let li2 = document.createElement('li');
+                 
                  votes.push(bus[i].votes);
                 views.push(bus[i].views);
                 arrimge.push(bus[i].gName);
+                
+                document.getElementById('display-button').style.display = 'none';
+
             }
+            chartRender();
+            
             
             leftImg.removeEventListener('click', clickHandler);
             rightImg.removeEventListener('click', clickHandler);
             centerImg.removeEventListener('click', clickHandler);
 
-        }
+        
+    }
     }
 }
 
@@ -156,4 +167,4 @@ function chartRender() {
         }
     });
 }
-chartRender();
+
