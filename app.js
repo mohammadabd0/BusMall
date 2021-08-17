@@ -10,7 +10,7 @@ let result = document.getElementById('results');
 let busImages = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg',
     'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg',
     'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg'];
-let maxAttempts = 5;
+let maxAttempts = 25;
 let attempt = 1;
 let bus = [];
 let gNames = [];
@@ -118,42 +118,42 @@ function clickHandler(event) {
     }
 }
 
-function chartRender() {
-    let ctx = document.getElementById('myChart').getContext('2d');
-    let myChart = new Chart(ctx, {
-        type : 'bar',
-        data: {
-            labels: busImages,
-            datasets: [{
-                label: '# of Votes',
-                data: votes,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)'
-                ],
-                borderWidth: 1
-            }, {
-                label: '# of views',
-                data: views,
-                backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(54, 162, 235, 1)'
-                ],
-                borderWidth: 1
+// function chartRender() {
+//     let ctx = document.getElementById('myChart').getContext('2d');
+//     let myChart = new Chart(ctx, {
+//         type : 'bar',
+//         data: {
+//             labels: busImages,
+//             datasets: [{
+//                 label: '# of Votes',
+//                 data: votes,
+//                 backgroundColor: [
+//                     'rgba(255, 99, 132, 0.2)'
+//                 ],
+//                 borderColor: [
+//                     'rgba(255, 99, 132, 1)'
+//                 ],
+//                 borderWidth: 1
+//             }, {
+//                 label: '# of views',
+//                 data: views,
+//                 backgroundColor: [
+//                     'rgba(54, 162, 235, 0.2)'
+//                 ],
+//                 borderColor: [
+//                     'rgba(54, 162, 235, 1)'
+//                 ],
+//                 borderWidth: 1
 
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
-chartRender();
+//             }]
+//         },
+//         options: {
+//             scales: {
+//                 y: {
+//                     beginAtZero: true
+//                 }
+//             }
+//         }
+//     });
+// }
+// chartRender();
