@@ -17,6 +17,21 @@ let gNames = [];
 let votes = [];
 let pick  =  [];
 let views = [];
+
+function saveToLocalStorage() {
+    let data = JSON.stringify(bus);
+    localStorage.setItem('img', data);
+}
+function readFromLocalStorage() {
+    let stringObj = localStorage.getItem('img');
+    let normalObj = JSON.parse(stringObj);
+
+    if (normalObj) {
+        bus = normalObj;
+        renderImg();
+    }
+}
+readFromLocalStorage();
 function BusMall(busName) {
     this.gName = busName.split('.')[0];
     this.gImg = `img/${busName}`;
@@ -70,9 +85,10 @@ function renderImg()
             bus[leftIndex].views++;
             bus[rightIndex].views++;
             bus[centerindex].views++;
-         
+            saveToLocalStorage();
+
+            renderImg();
 }
-renderImg();
 
 
 leftImg.addEventListener('click', clickHandler);
@@ -110,7 +126,7 @@ function clickHandler(event) {
                  liEl.textContent = `${bus[i].gName} has ${bus[i].votes} votes and  ${bus[i].views} views.`;
                  let li2 = document.createElement('li');
                  
-                 votes.push(bus[i].votes);
+                votes.push(bus[i].votes);
                 views.push(bus[i].views);
                 arrimge.push(bus[i].gName);
                 
