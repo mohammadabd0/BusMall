@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+html body {
+  margin: 20px;
+  background-color: #b7daec;
+}
+html header {
+  border: 0.5px solid teal;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  background-color: gray;
+}
+header h1 {
+  background-color: red;
+  color: white;
+  font-size: 4em;
+  float: left;
+  margin: 0.25em;
+  line-height: 0.75em;
+  padding: 0.5em 0.4em 0.5em 0.4em;
+  font-family: "Anton", sans-serif;
+}
+header > h2 {
+  color: white;
+  float: left;
+  margin-top: 6em;
+  font-family: "verdana", sans-serif;
+}
+
+#display-button {
+  margin-bottom: 50px;
+  font-family: Arial, sans-serif, serif;
+  font-size: 24px;
+  border-radius: 8px;
+  border: none;
+  color: #e3e3e3;
+  background-color: #444;
+  padding: 10px 15px;
+  margin-left: 459px;
+  cursor: pointer;
+}
