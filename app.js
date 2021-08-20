@@ -15,7 +15,6 @@ let attempt = 1;
 let bus = [];
 let gNames = [];
 let votes = [];
-let pick  =  [];
 let views = [];
 function BusMall(busName) {
     this.gName = busName.split('.')[0];
@@ -24,6 +23,7 @@ function BusMall(busName) {
     this.views = 0;
     bus.push(this);
     gNames.push(this.gName);
+    
 }
 
 
@@ -119,15 +119,15 @@ function clickHandler(event) {
             }
             chartRender();
             
-            
             leftImg.removeEventListener('click', clickHandler);
             rightImg.removeEventListener('click', clickHandler);
             centerImg.removeEventListener('click', clickHandler);
             document.getElementById('display-button').style.display = 'none';
-
-        
+            
+            
+        }
     }
-    }
+    
 }
 
 function chartRender() {
@@ -168,4 +168,5 @@ function chartRender() {
         }
     });
 }
+
 
