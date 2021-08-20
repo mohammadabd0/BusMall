@@ -85,7 +85,7 @@ function renderImg()
             bus[leftIndex].views++;
             bus[rightIndex].views++;
             bus[centerindex].views++;
-            saveToLocalStorage();
+            
 
             renderImg();
 }
@@ -135,7 +135,7 @@ function clickHandler(event) {
             }
             chartRender();
             
-            
+            saveToLocalStorage();
             leftImg.removeEventListener('click', clickHandler);
             rightImg.removeEventListener('click', clickHandler);
             centerImg.removeEventListener('click', clickHandler);
